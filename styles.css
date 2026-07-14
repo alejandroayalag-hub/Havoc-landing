@@ -1,0 +1,261 @@
+/* HAVOC landing — paleta y tipos del manual de marca v2 */
+:root {
+  --ciruela: #1E1533;
+  --violeta: #8B5CF6;
+  --violeta-hi: #A78BFA;
+  --violeta-deep: #5B21B6;
+  --tinta: #1B1424;
+  --gris: #7C748B;
+  --niebla: #F5F2FA;
+  --blanco: #FFFFFF;
+  --max: 1100px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--tinta);
+  background: var(--blanco);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .brand-name {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.accent { color: var(--violeta); }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+.mono-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--violeta);
+  margin: 0 0 14px;
+}
+
+/* ---------- NAV ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: rgba(30, 21, 51, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.18);
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand-mark { width: 30px; height: 30px; }
+.brand-name { color: var(--blanco); font-size: 1.25rem; letter-spacing: 0.02em; }
+
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--blanco); }
+.nav-cta {
+  padding: 8px 18px;
+  border: 1px solid var(--violeta);
+  border-radius: 999px;
+  color: var(--violeta-hi) !important;
+}
+.nav-cta:hover { background: var(--violeta); color: var(--blanco) !important; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 6px;
+}
+.nav-toggle span {
+  width: 24px; height: 2px;
+  background: var(--blanco);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.btn-primary {
+  background: var(--violeta);
+  color: var(--blanco);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.35);
+}
+.btn-primary:hover { background: var(--violeta-deep); transform: translateY(-2px); }
+.btn-ghost {
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  color: var(--violeta);
+}
+.btn-ghost:hover { background: rgba(139, 92, 246, 0.08); }
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  background: var(--ciruela);
+  color: var(--blanco);
+  overflow: hidden;
+  padding: 110px 24px 120px;
+}
+.hero-glow {
+  position: absolute;
+  top: -25%; left: 50%;
+  width: 720px; height: 720px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.28), transparent 62%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; max-width: 760px; margin: 0 auto; text-align: center; }
+.hero-mark { width: 76px; height: 76px; margin-bottom: 20px; filter: drop-shadow(0 6px 18px rgba(139,92,246,0.4)); }
+.eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--violeta-hi);
+  margin: 0 0 18px;
+}
+.hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); margin: 0 0 22px; }
+.lead { font-size: 1.15rem; color: rgba(255, 255, 255, 0.78); max-width: 600px; margin: 0 auto 34px; }
+.hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- BAND (statement) ---------- */
+.band { background: var(--niebla); padding: 70px 0; }
+.band-lead { max-width: 860px; }
+.big-statement {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* ---------- SECTIONS ---------- */
+.section { padding: 84px 0; }
+.section-alt { background: var(--niebla); }
+.section-title { font-size: clamp(1.7rem, 3.5vw, 2.4rem); margin: 0 0 44px; }
+
+.grid { display: grid; gap: 20px; }
+.grid-services { grid-template-columns: repeat(2, 1fr); }
+.grid-values { grid-template-columns: repeat(3, 1fr); }
+.grid-projects { grid-template-columns: repeat(2, 1fr); }
+
+/* cards servicios */
+.card {
+  background: var(--blanco);
+  border: 1px solid rgba(30, 21, 51, 0.08);
+  border-radius: 16px;
+  padding: 30px;
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(30, 21, 51, 0.1);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+.card h3 { font-size: 1.25rem; margin: 0 0 12px; }
+.card p { margin: 0; color: var(--gris); }
+.card-wide { grid-column: 1 / -1; }
+.section-alt .card { background: var(--blanco); }
+
+/* valores */
+.value { }
+.value-num {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.6rem;
+  color: var(--violeta);
+  display: block;
+  margin-bottom: 10px;
+}
+.value h3 { font-size: 1.3rem; margin: 0 0 10px; }
+.value p { margin: 0; color: var(--gris); }
+
+/* proyectos */
+.project {
+  border: 1px solid rgba(30, 21, 51, 0.1);
+  border-left: 3px solid var(--violeta);
+  border-radius: 12px;
+  padding: 26px;
+  background: var(--blanco);
+}
+.project-sector {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: 0 0 8px;
+}
+.project-desc { margin: 0; color: var(--gris); }
+.projects-note {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--gris);
+  margin-top: 24px;
+}
+
+/* ---------- CONTACTO ---------- */
+.section-contact { background: var(--ciruela); color: var(--blanco); text-align: center; }
+.contact-inner { max-width: 640px; }
+.section-contact .section-title { color: var(--blanco); }
+.contact-lead { color: rgba(255, 255, 255, 0.78); font-size: 1.1rem; margin: 0 0 30px; }
+.contact-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+.section-contact .btn-ghost { color: var(--violeta-hi); border-color: rgba(139,92,246,0.6); }
+.contact-loc { color: var(--gris); margin: 0; }
+
+/* ---------- FOOTER ---------- */
+.footer { background: var(--tinta); color: rgba(255,255,255,0.7); padding: 40px 0; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.footer .brand-name { font-size: 1.1rem; }
+.footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+.footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; }
+.footer-links a:hover { color: var(--blanco); }
+.footer-legal { font-size: 0.85rem; margin: 0; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 760px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 16px 24px 24px;
+    background: var(--ciruela);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.18);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 10px 0; width: 100%; }
+  .nav-cta { display: inline-block; margin-top: 6px; }
+
+  .grid-services, .grid-values, .grid-projects { grid-template-columns: 1fr; }
+  .card-wide { grid-column: auto; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAVOC — Soluciones Integradas | Desarrollo de software a medida</title>
+  <meta name="description" content="HAVOC pone en orden tu operación: apps web y móviles a medida, integraciones y hosting. Control sobre el caos operativo. Uruapan, Michoacán.">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HAVOC — Soluciones Integradas">
+  <meta property="og:description" content="Control sobre el caos operativo. Desarrollo de software a medida: web, móvil, integraciones y hosting.">
+  <meta property="og:url" content="https://havocdev.mx">
+  <meta property="og:image" content="https://havocdev.mx/og.png">
+  <meta name="theme-color" content="#1E1533">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- baculo reutilizable -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="g-shaft" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#8B5CF6"/>
+        <stop offset="1" stop-color="#6D28D9"/>
+      </linearGradient>
+      <symbol id="baculo" viewBox="0 0 100 100">
+        <polygon points="50,18 40,30 40,44 50,54 60,44 60,30" fill="#7C3AED"/>
+        <polygon points="50,18 40,30 40,44 50,54" fill="#A78BFA"/>
+        <polygon points="50,18 40,30 60,30" fill="#C4B5FD"/>
+        <rect x="33" y="56" width="34" height="7" rx="3.5" fill="url(#g-shaft)"/>
+        <rect x="45" y="60" width="10" height="26" rx="5" fill="url(#g-shaft)"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="HAVOC inicio">
+      <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#baculo"/></svg>
+      <span class="brand-name">HAVOC</span>
+    </a>
+    <nav class="nav-links" id="menu">
+      <a href="#servicios">Servicios</a>
+      <a href="#trabajo">Cómo trabajamos</a>
+      <a href="#proyectos">Proyectos</a>
+      <a class="nav-cta" href="#contacto">Contacto</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <svg class="hero-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#baculo"/></svg>
+        <p class="eyebrow">HAVOC — Soluciones Integradas</p>
+        <h1>Control sobre el<br><span class="accent">caos operativo.</span></h1>
+        <p class="lead">Tu operación en papel, Excel o cuadernos sueltos ya vive en caos.
+          No lo inventamos: lo encontramos y lo ponemos en orden con software hecho a tu medida.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacto">Hablemos por WhatsApp</a>
+          <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUE HACEMOS / POSICIONAMIENTO -->
+    <section class="band">
+      <div class="wrap band-lead">
+        <p class="mono-label">01 — Qué hacemos</p>
+        <p class="big-statement">Convertimos operación desordenada en sistemas <span class="accent">en regla desde el primer día</span> — sin detener tu día a día.</p>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section" id="servicios">
+      <div class="wrap">
+        <p class="mono-label">02 — Servicios</p>
+        <h2 class="section-title">Todo el desarrollo, en un solo lugar</h2>
+        <div class="grid grid-services">
+
+          <article class="card">
+            <h3>Apps web a medida</h3>
+            <p>Plataformas para RH, control escolar, jurídico, field-service y más. Roles, expedientes, cobranza y reportes reales, no plantillas.</p>
+          </article>
+
+          <article class="card">
+            <h3>Apps móviles</h3>
+            <p>iOS y Android con Expo. Cámara, GPS, autenticación biométrica y trabajo offline para el equipo en campo.</p>
+          </article>
+
+          <article class="card">
+            <h3>Landings y sitios</h3>
+            <p>Sitios rápidos, claros y con tu identidad. Captación de clientes y presencia profesional lista para producción.</p>
+          </article>
+
+          <article class="card">
+            <h3>Integraciones</h3>
+            <p>Pagos (MercadoPago), GPS, códigos QR, biométrico y APIs externas conectadas a tu sistema sin fricción.</p>
+          </article>
+
+          <article class="card card-wide">
+            <h3>Deploy, hosting y mantenimiento</h3>
+            <p>Tu sistema en servidor propio, con dominio, SSL y respaldos. Mantenimiento continuo <strong>de lo que desarrollamos nosotros</strong> — cero sorpresas.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO TRABAJAMOS -->
+    <section class="section section-alt" id="trabajo">
+      <div class="wrap">
+        <p class="mono-label">03 — Cómo trabajamos</p>
+        <h2 class="section-title">Tres cosas que no negociamos</h2>
+        <div class="grid grid-values">
+
+          <div class="value">
+            <span class="value-num">01</span>
+            <h3>Cumplimiento</h3>
+            <p>La norma resuelta dentro del producto, no explicada después. Lo que la ley pide, ya viene incluido.</p>
+          </div>
+
+          <div class="value">
+            <span class="value-num">02</span>
+            <h3>Claridad</h3>
+            <p>Sin jerga legal ni técnica innecesaria. Hablamos en tu idioma, con datos concretos.</p>
+          </div>
+
+          <div class="value">
+            <span class="value-num">03</span>
+            <h3>Cercanía</h3>
+            <p>Un colega que ya resolvió el problema, no un proveedor lejano. Respondemos y acompañamos.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="section" id="proyectos">
+      <div class="wrap">
+        <p class="mono-label">04 — Proyectos</p>
+        <h2 class="section-title">Sistemas que ya están operando</h2>
+        <div class="grid grid-projects">
+
+          <article class="project">
+            <p class="project-sector">Clínica estética</p>
+            <p class="project-desc">Expediente clínico NOM-004, catálogo de servicios, farmacia con inventario y app iOS para el equipo.</p>
+          </article>
+
+          <article class="project">
+            <p class="project-sector">Field-service HVAC</p>
+            <p class="project-desc">Assessment con fotos en sitio, firma del cliente, roles admin/PM/técnico y check-in biométrico móvil.</p>
+          </article>
+
+          <article class="project">
+            <p class="project-sector">Control escolar</p>
+            <p class="project-desc">Inscripciones, cobranza con pago en línea, RH y notificaciones automáticas a padres de familia.</p>
+          </article>
+
+          <article class="project">
+            <p class="project-sector">Despacho jurídico</p>
+            <p class="project-desc">Gestión de expedientes y contratos, con repositorio seguro y control de acceso por rol.</p>
+          </article>
+
+        </div>
+        <p class="projects-note">Nombres de clientes reservados por confidencialidad.</p>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section section-contact" id="contacto">
+      <div class="wrap contact-inner">
+        <p class="mono-label">05 — Contacto</p>
+        <h2 class="section-title">Pongamos en orden tu operación</h2>
+        <p class="contact-lead">Cuéntanos qué llevas hoy en papel o en Excel. Te decimos cómo se vería en regla, sin compromiso.</p>
+        <div class="contact-actions">
+          <!-- TODO: reemplazar 52XXXXXXXXXX por el numero real de WhatsApp -->
+          <a class="btn btn-primary" href="https://wa.me/52XXXXXXXXXX?text=Hola%20HAVOC%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20desarrollo" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-ghost" href="mailto:contacto@havocdev.mx">contacto@havocdev.mx</a>
+        </div>
+        <p class="contact-loc mono-label">Uruapan, Michoacán · México</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="#top" aria-label="HAVOC inicio">
+        <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#baculo"/></svg>
+        <span class="brand-name">HAVOC</span>
+      </a>
+      <nav class="footer-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajo">Cómo trabajamos</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <p class="footer-legal">© 2026 HAVOC — Soluciones Integradas</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
