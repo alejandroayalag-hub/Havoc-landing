@@ -210,7 +210,7 @@ table.cost tr.imss-detail td:last-child{color:var(--text2);font-size:12px}
         <div class="card-title">Días y calendario laboral</div>
 
         <div class="info-box">
-          De los 365 días del año, el IMSS no cobra solo sobre esos 365 — cobra sobre el <strong>Salario Diario Integrado (SDI)</strong>, que suma: los 365 días de salario, más los <strong>15 días de aguinaldo</strong>, más los <strong>días de vacaciones</strong> (12 el primer año, +2 por cada año de servicio adicional), más el <strong>25% de esos días de vacaciones</strong> por concepto de prima vacacional. La suma de todos esos conceptos dividida entre 365 genera el SDI, que es la base real sobre la que el IMSS calcula y cobra las cuotas patronales.
+          De los 365 días del año, el IMSS no cobra solo sobre esos 365 — cobra sobre el <strong>Salario Diario Integrado (SDI)</strong>, que suma: los 365 días de salario, más los <strong>15 días de aguinaldo</strong>, más los <strong>días de vacaciones</strong> (12 el primer año, +2 por año hasta el quinto y después +2 cada 5 años), más el <strong>25% de esos días de vacaciones</strong> por concepto de prima vacacional. La suma de todos esos conceptos dividida entre 365 genera el SDI, que es la base real sobre la que el IMSS calcula y cobra las cuotas patronales.
         </div>
 
         <div class="field">
@@ -351,10 +351,11 @@ function getPctCyV(sbc_d) {
   return 0.07513;
 }
 
-// Días de vacaciones según LFT: 12 días el primer año, +2 por cada año adicional
+// Días de vacaciones según art. 76 LFT: 12 el 1er año, +2 por año hasta 20 (5º año), luego +2 cada 5 años
 function diasVacaciones(anos) {
   if(anos < 1) return Math.floor(12 * anos); // proporcional primer año
-  return 12 + (Math.floor(anos) - 1) * 2;
+  const n = Math.floor(anos);
+  return n <= 5 ? 10 + 2 * n : 22 + 2 * Math.floor((n - 6) / 5);
 }
 
 function getAntiguedad(fechaStr) {
@@ -523,11 +524,11 @@ function calcular() {
     <div class="sc"><div class="sl">Días reales laborados / año</div><div class="sv">${diasLaborados}</div></div>
     <div class="sc amber"><div class="sl">Costo anual total</div><div class="sv">${fmt(costoAnualTotal)}</div></div>
     <div class="sc"><div class="sl">Costo nominal / día<br><span style="font-size:10px;font-weight:400">÷ ${diasLaborados} días base IMSS</span></div><div class="sv" style="color:var(--text2)">${fmt(costoAnualTotal/diasLaborados)}</div></div>
-    <div class="sc navy"><div class="sl">Costo real / día<br><span style="font-size:10px;font-weight:400;opacity:.7">÷ 280 días laborados</span></div><div class="sv">${fmt(costoAnualTotal/280)}</div></div>
+    <div class="sc navy"><div class="sl">Costo real / día<br><span style="font-size:10px;font-weight:400;opacity:.7">÷ ${diasLaborados} días laborados</span></div><div class="sv">${fmt(costoAnualTotal/diasLaborados)}</div></div>
   `;
 
   // TABLA PRINCIPAL
-  const DIAS_REALES = 280;
+  const DIAS_REALES = diasLaborados;
 
   document.getElementById('tabla-principal').innerHTML = `
     <thead><tr>
@@ -656,7 +657,7 @@ function calcular() {
         </tbody>
       </table>
     </div>
-    <p class="note"><strong>Antigüedad:</strong> ${antiguedad.toFixed(2)} años → <strong>${dvac} días de vacaciones</strong> (12 días el 1er año + ${Math.max(0,anosCompletos-1)*2} días adicionales por ${Math.max(0,anosCompletos-1)} año${anosCompletos>2?'s':''} extra). La prima de antigüedad se devenga a razón de 12 días de salario por año de servicio y debe provisionarse mensualmente como obligación futura.</p>
+    <p class="note"><strong>Antigüedad:</strong> ${antiguedad.toFixed(2)} años → <strong>${dvac} días de vacaciones</strong> (tabla art. 76 LFT: 12 el 1er año, +2 por año hasta el 5º, después +2 cada 5 años). La prima de antigüedad se devenga a razón de 12 días de salario por año de servicio y debe provisionarse mensualmente como obligación futura.</p>
   `;
 
   // PANEL OPCIONALES
