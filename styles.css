@@ -213,6 +213,28 @@ h1, h2, h3, .brand-name {
   margin: 0 0 8px;
 }
 .project-desc { margin: 0; color: var(--gris); }
+.grid-sites { margin-bottom: 24px; }
+.site {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(30, 21, 51, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--blanco);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color .2s, transform .2s;
+}
+.site:hover { border-color: var(--violeta); transform: translateY(-2px); }
+.site img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-bottom: 1px solid rgba(30, 21, 51, 0.1); }
+.site-body { display: flex; flex-direction: column; padding: 22px 26px 26px; }
+.site .project-sector, .site .project-desc { display: block; }
+.site-link {
+  margin-top: 14px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--violeta-deep);
+}
 .projects-note {
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.78rem;
