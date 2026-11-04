@@ -213,7 +213,7 @@ h1, h2, h3, .brand-name {
   margin: 0 0 8px;
 }
 .project-desc { margin: 0; color: var(--gris); }
-.grid-sites { margin-bottom: 24px; }
+.grid-sites { margin-bottom: 24px; grid-template-columns: repeat(3, 1fr); }
 .site {
   display: flex;
   flex-direction: column;
